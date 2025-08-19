@@ -1,5 +1,5 @@
 error: missing required option `prompt`
  --> $DIR/prompt.rs:2:34
   |
-2 |     requestty::questions![Custom { name: "prompt" }];
+2 |     reequestty::questions![Custom { name: "prompt" }];
   |                                  ^^^^^^^^^^^^^^^^^^

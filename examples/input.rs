@@ -1,5 +1,5 @@
-use requestty::prompt::style::Stylize;
-use requestty::Question;
+use reequestty::prompt::style::Stylize;
+use reequestty::Question;
 
 fn map_err<E>(_: E) {}
 
@@ -76,5 +76,5 @@ fn main() {
             .build(),
     ];
 
-    println!("{:#?}", requestty::prompt(questions));
+    println!("{:#?}", reequestty::prompt(questions));
 }

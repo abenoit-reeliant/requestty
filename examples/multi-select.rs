@@ -1,7 +1,7 @@
-use requestty::{Choice, Separator};
+use reequestty::{Choice, Separator};
 
 fn main() {
-    let question = requestty::Question::multi_select("toppings")
+    let question = reequestty::Question::multi_select("toppings")
         .message("Select toppings")
         .separator(" = The Meats = ")
         .choices(vec!["Pepperoni", "Ham", "Ground Meat", "Bacon"])
@@ -27,5 +27,5 @@ fn main() {
         })
         .build();
 
-    println!("{:#?}", requestty::prompt_one(question));
+    println!("{:#?}", reequestty::prompt_one(question));
 }

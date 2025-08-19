@@ -1,5 +1,5 @@
 fn main() {
-    requestty::questions![Editor {
+    reequestty::questions![Editor {
         should_loop: todo!()
     }];
 }

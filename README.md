@@ -1,13 +1,13 @@
-# Requestty
+# reequestty
 
-![RustCI](https://github.com/Lutetium-Vanadium/requestty/workflows/Default/badge.svg)
-![RustCI](https://github.com/Lutetium-Vanadium/requestty/workflows/Crossterm/badge.svg)
-![RustCI](https://github.com/Lutetium-Vanadium/requestty/workflows/Termion/badge.svg)
-[![Crates.io](https://img.shields.io/crates/v/requestty.svg)](https://crates.io/crates/requestty)
-[![License](https://img.shields.io/crates/l/requestty.svg)](./LICENSE)
-[![Documentation](https://docs.rs/requestty/badge.svg)](https://docs.rs/requestty)
+![RustCI](https://github.com/Lutetium-Vanadium/reequestty/workflows/Default/badge.svg)
+![RustCI](https://github.com/Lutetium-Vanadium/reequestty/workflows/Crossterm/badge.svg)
+![RustCI](https://github.com/Lutetium-Vanadium/reequestty/workflows/Termion/badge.svg)
+[![Crates.io](https://img.shields.io/crates/v/reequestty.svg)](https://crates.io/crates/reequestty)
+[![License](https://img.shields.io/crates/l/reequestty.svg)](./LICENSE)
+[![Documentation](https://docs.rs/reequestty/badge.svg)](https://docs.rs/reequestty)
 
-`requestty` (request-tty) is an easy-to-use collection of interactive
+`reequestty` (request-tty) is an easy-to-use collection of interactive
 cli prompts inspired by [Inquirer.js](https://github.com/SBoudrias/Inquirer.js).
 
 - Easy-to-use - The builder API and macros allow you to easily configure
@@ -32,13 +32,13 @@ Add this to your `Cargo.toml`
 
 ```toml
 [dependencies]
-requestty = "0.4.1"
+reequestty = "0.4.1"
 ```
 
 To ask a question:
 
 ```rust
-let question = requestty::Question::expand("overwrite")
+let question = reequestty::Question::expand("overwrite")
     .message("Conflict on `file.rs`")
     .choices(vec![
         ('y', "Overwrite"),
@@ -49,11 +49,11 @@ let question = requestty::Question::expand("overwrite")
     .choice('x', "Abort")
     .build();
 
-println!("{:#?}", requestty::prompt_one(question));
+println!("{:#?}", reequestty::prompt_one(question));
 ```
 
-More examples are available in the [documentation](https://docs.rs/requestty)
-and the [examples](https://github.com/Lutetium-Vanadium/requestty/tree/master/examples)
+More examples are available in the [documentation](https://docs.rs/reequestty)
+and the [examples](https://github.com/Lutetium-Vanadium/reequestty/tree/master/examples)
 directory.
 
 ## In-built prompts

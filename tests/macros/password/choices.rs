@@ -1,3 +1,3 @@
 fn main() {
-    requestty::questions![Password { choices: todo!() }];
+    reequestty::questions![Password { choices: todo!() }];
 }

@@ -1,3 +1,3 @@
 fn main() {
-    requestty::questions![Custom { name: "prompt" }];
+    reequestty::questions![Custom { name: "prompt" }];
 }

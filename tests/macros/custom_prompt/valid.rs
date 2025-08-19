@@ -1,4 +1,4 @@
-use requestty::prompt::*;
+use reequestty::prompt::*;
 
 #[derive(Debug)]
 struct TestPrompt;
@@ -10,13 +10,13 @@ impl Prompt for TestPrompt {
         _answers: &Answers,
         _backend: &mut dyn Backend,
         _events: &mut dyn EventIterator,
-    ) -> requestty::Result<Option<Answer>> {
+    ) -> reequestty::Result<Option<Answer>> {
         Ok(Some(Answer::Int(0)))
     }
 }
 
 fn main() {
-    requestty::questions![Custom {
+    reequestty::questions![Custom {
         name: "name",
         prompt: TestPrompt,
     }];

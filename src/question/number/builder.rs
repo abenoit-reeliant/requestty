@@ -31,7 +31,7 @@ macro_rules! builder {
             /// # Examples
             ///
             /// ```
-            /// use requestty::Question;
+            /// use reequestty::Question;
             ///
             #[doc = $declare]
             ///     .message("Please enter a number")
@@ -42,7 +42,7 @@ macro_rules! builder {
             /// # Examples
             ///
             /// ```
-            /// use requestty::{Question, Answers};
+            /// use reequestty::{Question, Answers};
             ///
             #[doc = $declare]
             ///     .when(|previous_answers: &Answers| match previous_answers.get("ask_number") {
@@ -56,7 +56,7 @@ macro_rules! builder {
             /// # Examples
             ///
             /// ```
-            /// use requestty::{Question, Answers};
+            /// use reequestty::{Question, Answers};
             ///
             #[doc = $declare]
             ///     .ask_if_answered(true)
@@ -67,7 +67,7 @@ macro_rules! builder {
             /// # Examples
             ///
             /// ```
-            /// use requestty::{Question, Answers, OnEsc};
+            /// use reequestty::{Question, Answers, OnEsc};
             ///
             #[doc = $declare]
             ///     .on_esc(OnEsc::Terminate)
@@ -84,7 +84,7 @@ macro_rules! builder {
             /// # Examples
             ///
             /// ```
-            /// use requestty::Question;
+            /// use reequestty::Question;
             ///
             #[doc = $declare]
             #[doc = $default]
@@ -101,7 +101,7 @@ macro_rules! builder {
             /// # Examples
             ///
             /// ```
-            /// use requestty::Question;
+            /// use reequestty::Question;
             ///
             #[doc = $declare]
             #[doc = $filter]
@@ -114,7 +114,7 @@ macro_rules! builder {
             /// # Examples
             ///
             /// ```
-            /// use requestty::Question;
+            /// use reequestty::Question;
             ///
             #[doc = $declare]
             ///     .validate(|n, previous_answers| {
@@ -136,7 +136,7 @@ macro_rules! builder {
             /// # Examples
             ///
             /// ```
-            /// use requestty::Question;
+            /// use reequestty::Question;
             ///
             #[doc = $declare]
             #[doc = $validate_on_key]
@@ -157,7 +157,7 @@ macro_rules! builder {
             /// # Examples
             ///
             /// ```
-            /// use requestty::Question;
+            /// use reequestty::Question;
             ///
             #[doc = $declare]
             ///     .transform(|n, previous_answers, backend| {
@@ -193,7 +193,7 @@ builder! {
 /// The number is parsed using [`from_str`].
 ///
 /// <img
-///   src="https://raw.githubusercontent.com/lutetium-vanadium/requestty/master/assets/int.gif"
+///   src="https://raw.githubusercontent.com/lutetium-vanadium/reequestty/master/assets/int.gif"
 ///   style="max-height: 11rem"
 /// />
 ///
@@ -202,7 +202,7 @@ builder! {
 /// # Examples
 ///
 /// ```
-/// use requestty::Question;
+/// use reequestty::Question;
 ///
 /// let int = Question::int("age")
 ///     .message("What is your age?")
@@ -232,7 +232,7 @@ builder! {
 /// The number is parsed using [`from_str`], but cannot be `NaN`.
 ///
 /// <img
-///   src="https://raw.githubusercontent.com/lutetium-vanadium/requestty/master/assets/float.gif"
+///   src="https://raw.githubusercontent.com/lutetium-vanadium/reequestty/master/assets/float.gif"
 ///   style="max-height: 11rem"
 /// />
 ///
@@ -241,7 +241,7 @@ builder! {
 /// # Examples
 ///
 /// ```
-/// use requestty::Question;
+/// use reequestty::Question;
 ///
 /// let float = Question::float("number")
 ///     .message("What is your favourite number?")

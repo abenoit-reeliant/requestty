@@ -2,10 +2,10 @@ fn main() {
     let choice = "choice";
     let default_choice = true;
 
-    requestty::questions! [
+    reequestty::questions! [
         MultiSelect {
             name: "name",
-            on_esc: requestty::OnEsc::Terminate,
+            on_esc: reequestty::OnEsc::Terminate,
             transform: |_, _, _| Ok(()),
             validate: |_, _| Ok(()),
             filter: |t, _| t,

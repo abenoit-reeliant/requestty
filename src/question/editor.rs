@@ -191,7 +191,7 @@ impl Editor<'_> {
 /// present, `vim` (for unix) or `notepad` (for windows) is used.
 ///
 /// <img
-///   src="https://raw.githubusercontent.com/lutetium-vanadium/requestty/master/assets/editor.gif"
+///   src="https://raw.githubusercontent.com/lutetium-vanadium/reequestty/master/assets/editor.gif"
 ///   style="max-height: 30rem"
 /// />
 ///
@@ -200,7 +200,7 @@ impl Editor<'_> {
 /// # Examples
 ///
 /// ```
-/// use requestty::Question;
+/// use reequestty::Question;
 ///
 /// let editor = Question::editor("description")
 ///     .message("Please enter a short description about yourself")
@@ -228,7 +228,7 @@ impl<'a> EditorBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let editor = Question::editor("description")
     ///     .message("Please enter a short description about yourself")
@@ -239,7 +239,7 @@ impl<'a> EditorBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Question, Answers};
+    /// use reequestty::{Question, Answers};
     ///
     /// let editor = Question::editor("description")
     ///     .when(|previous_answers: &Answers| match previous_answers.get("anonymous") {
@@ -253,7 +253,7 @@ impl<'a> EditorBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Question, Answers};
+    /// use reequestty::{Question, Answers};
     ///
     /// let editor = Question::editor("description")
     ///     .ask_if_answered(true)
@@ -264,7 +264,7 @@ impl<'a> EditorBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Question, Answers, OnEsc};
+    /// use reequestty::{Question, Answers, OnEsc};
     ///
     /// let editor = Question::editor("description")
     ///     .on_esc(OnEsc::Terminate)
@@ -280,7 +280,7 @@ impl<'a> EditorBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let editor = Question::editor("description")
     ///     .default("My name is ")
@@ -300,7 +300,7 @@ impl<'a> EditorBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let editor = Question::editor("description")
     ///     .extension(".md")
@@ -321,7 +321,7 @@ impl<'a> EditorBuilder<'a> {
     ///
     /// ```no_run
     /// use std::process::Command;
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// # fn get_preffered_editor() -> Command { todo!() }
     ///
@@ -339,7 +339,7 @@ impl<'a> EditorBuilder<'a> {
     ///
     /// ```
     /// # fn parse_markdown(s: String) -> String { s }
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let editor = Question::editor("description")
     ///     .filter(|description, previous_answers| parse_markdown(description))
@@ -352,7 +352,7 @@ impl<'a> EditorBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let editor = Question::editor("description")
     ///     .validate(|description, previous_answers| if description.lines().count() >= 2 {
@@ -369,7 +369,7 @@ impl<'a> EditorBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let editor = Question::editor("description")
     ///     .transform(|description, previous_answers, backend| {

@@ -14,7 +14,7 @@ use crate::{
 /// but [`Choice::Separator`]s can only be single line.
 ///
 /// <img
-///   src="https://raw.githubusercontent.com/lutetium-vanadium/requestty/master/assets/multi-select.gif"
+///   src="https://raw.githubusercontent.com/lutetium-vanadium/reequestty/master/assets/multi-select.gif"
 ///   style="max-height: 20rem"
 /// />
 ///
@@ -23,7 +23,7 @@ use crate::{
 /// # Examples
 ///
 /// ```
-/// use requestty::{Question, DefaultSeparator};
+/// use reequestty::{Question, DefaultSeparator};
 ///
 /// let multi_select = Question::multi_select("cheese")
 ///     .message("What cheese do you want?")
@@ -55,7 +55,7 @@ impl<'a> MultiSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let multi_select = Question::multi_select("cheese")
     ///     .message("What cheese do you want?")
@@ -66,7 +66,7 @@ impl<'a> MultiSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Answers, Question};
+    /// use reequestty::{Answers, Question};
     ///
     /// let multi_select = Question::multi_select("cheese")
     ///     .when(|previous_answers: &Answers| match previous_answers.get("vegan") {
@@ -80,7 +80,7 @@ impl<'a> MultiSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Answers, Question};
+    /// use reequestty::{Answers, Question};
     ///
     /// let multi_select = Question::multi_select("cheese")
     ///     .ask_if_answered(true)
@@ -91,7 +91,7 @@ impl<'a> MultiSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Answers, Question, OnEsc};
+    /// use reequestty::{Answers, Question, OnEsc};
     ///
     /// let multi_select = Question::multi_select("cheese")
     ///     .on_esc(OnEsc::Terminate)
@@ -112,7 +112,7 @@ impl<'a> MultiSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let multi_select = Question::multi_select("cheese")
     ///     .page_size(10)
@@ -132,7 +132,7 @@ impl<'a> MultiSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let multi_select = Question::multi_select("cheese")
     ///     .should_loop(false)
@@ -156,7 +156,7 @@ impl<'a> MultiSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let multi_select = Question::multi_select("cheese")
     ///     .choice("Cheddar")
@@ -176,7 +176,7 @@ impl<'a> MultiSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let multi_select = Question::multi_select("cheese")
     ///     .choice_with_default("Mozzarella", true)
@@ -201,7 +201,7 @@ impl<'a> MultiSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let multi_select = Question::multi_select("cheese")
     ///     .separator("-- custom separator text --")
@@ -226,7 +226,7 @@ impl<'a> MultiSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let multi_select = Question::multi_select("cheese")
     ///     .default_separator()
@@ -255,7 +255,7 @@ impl<'a> MultiSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let multi_select = Question::multi_select("cheese")
     ///     .choices(vec![
@@ -290,7 +290,7 @@ impl<'a> MultiSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let multi_select = Question::multi_select("cheese")
     ///     .choices_with_default(vec![
@@ -346,7 +346,7 @@ impl<'a> MultiSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let multi_select = Question::multi_select("evil-cheese")
     ///     .filter(|mut cheeses, previous_answers| {
@@ -364,7 +364,7 @@ impl<'a> MultiSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let multi_select = Question::multi_select("cheese")
     ///     .validate(|cheeses, previous_answers| {
@@ -383,7 +383,7 @@ impl<'a> MultiSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let multi_select = Question::multi_select("cheese")
     ///     .transform(|cheeses, previous_answers, backend| {

@@ -1,5 +1,5 @@
 fn main() {
-    requestty::questions![MultiSelect {
+    reequestty::questions![MultiSelect {
         auto_complete: todo!()
     }];
 }

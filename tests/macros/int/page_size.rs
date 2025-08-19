@@ -1,3 +1,3 @@
 fn main() {
-    requestty::questions![Int { page_size: todo!() }];
+    reequestty::questions![Int { page_size: todo!() }];
 }

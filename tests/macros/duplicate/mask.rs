@@ -1,5 +1,5 @@
 fn main() {
-    let q = requestty::questions![Password {
+    let q = reequestty::questions![Password {
         mask: todo!(),
         mask: todo!(),
     }];

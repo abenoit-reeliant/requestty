@@ -10,7 +10,7 @@ use crate::{Answer, Answers};
 /// interaction. While no particular look is enforced, it is recommended to keep a similar look to
 /// the rest of the in-built questions.
 ///
-/// You can use the `requestty-ui` crate to build the prompts. You can see the implementations of
+/// You can use the `reequestty-ui` crate to build the prompts. You can see the implementations of
 /// the in-built questions for examples on how to use it.
 ///
 /// See also [`Question::custom`]
@@ -65,7 +65,7 @@ impl<T: Prompt> CustomPromptInteral for Option<T> {
 /// # Examples
 ///
 /// ```
-/// use requestty::{prompt, Question};
+/// use reequestty::{prompt, Question};
 ///
 /// #[derive(Debug)]
 /// struct MyPrompt { /* ... */ }
@@ -83,7 +83,7 @@ impl<T: Prompt> CustomPromptInteral for Option<T> {
 ///         answers: &prompt::Answers,
 ///         backend: &mut dyn prompt::Backend,
 ///         events: &mut dyn prompt::EventIterator,
-///     ) -> requestty::Result<Option<prompt::Answer>> {
+///     ) -> reequestty::Result<Option<prompt::Answer>> {
 ///         // ...
 /// #         todo!()
 ///     }
@@ -112,7 +112,7 @@ impl<'a> CustomPromptBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{prompt, Question};
+    /// use reequestty::{prompt, Question};
     ///
     /// #[derive(Debug)]
     /// struct MyPrompt { /* ... */ }
@@ -130,7 +130,7 @@ impl<'a> CustomPromptBuilder<'a> {
     ///         answers: &prompt::Answers,
     ///         backend: &mut dyn prompt::Backend,
     ///         events: &mut dyn prompt::EventIterator,
-    ///     ) -> requestty::Result<Option<prompt::Answer>> {
+    ///     ) -> reequestty::Result<Option<prompt::Answer>> {
     ///         // ...
     /// #         todo!()
     ///     }
@@ -145,7 +145,7 @@ impl<'a> CustomPromptBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{prompt, Question, Answers};
+    /// use reequestty::{prompt, Question, Answers};
     ///
     /// #[derive(Debug)]
     /// struct MyPrompt { /* ... */ }
@@ -163,7 +163,7 @@ impl<'a> CustomPromptBuilder<'a> {
     ///         answers: &prompt::Answers,
     ///         backend: &mut dyn prompt::Backend,
     ///         events: &mut dyn prompt::EventIterator,
-    ///     ) -> requestty::Result<Option<prompt::Answer>> {
+    ///     ) -> reequestty::Result<Option<prompt::Answer>> {
     ///         // ...
     /// #         todo!()
     ///     }
@@ -181,7 +181,7 @@ impl<'a> CustomPromptBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{prompt, Question};
+    /// use reequestty::{prompt, Question};
     ///
     /// #[derive(Debug)]
     /// struct MyPrompt { /* ... */ }
@@ -199,7 +199,7 @@ impl<'a> CustomPromptBuilder<'a> {
     ///         answers: &prompt::Answers,
     ///         backend: &mut dyn prompt::Backend,
     ///         events: &mut dyn prompt::EventIterator,
-    ///     ) -> requestty::Result<Option<prompt::Answer>> {
+    ///     ) -> reequestty::Result<Option<prompt::Answer>> {
     ///         // ...
     /// #         todo!()
     ///     }

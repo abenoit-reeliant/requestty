@@ -1,5 +1,5 @@
 fn main() {
-    let question = requestty::Question::int("age")
+    let question = reequestty::Question::int("age")
         .message("What is your age?")
         .default(69)
         .validate_on_key(|age, _| age > 0 && age < 130)
@@ -12,5 +12,5 @@ fn main() {
         })
         .build();
 
-    println!("{:#?}", requestty::prompt_one(question));
+    println!("{:#?}", reequestty::prompt_one(question));
 }

@@ -1,4 +1,4 @@
-use requestty::Question;
+use reequestty::Question;
 use ui::{
     events::{KeyCode, TestEvents},
     style::Color,
@@ -31,7 +31,7 @@ fn test_tranform() {
         KeyCode::Enter.into(),
     ]);
 
-    let ans = requestty::prompt_one_with(expand, &mut backend, &mut events)
+    let ans = reequestty::prompt_one_with(expand, &mut backend, &mut events)
         .unwrap()
         .try_into_expand_item()
         .unwrap();
@@ -58,7 +58,7 @@ fn test_default() {
     let mut backend = helpers::SnapshotOnFlushBackend::new(size);
     let mut events = TestEvents::new(Some(KeyCode::Enter.into()));
 
-    let ans = requestty::prompt_one_with(expand, &mut backend, &mut events)
+    let ans = reequestty::prompt_one_with(expand, &mut backend, &mut events)
         .unwrap()
         .try_into_expand_item()
         .unwrap();
@@ -77,7 +77,7 @@ fn test_default() {
         KeyCode::Enter.into(),
     ]);
 
-    let ans = requestty::prompt_one_with(expand, &mut backend, &mut events)
+    let ans = reequestty::prompt_one_with(expand, &mut backend, &mut events)
         .unwrap()
         .try_into_expand_item()
         .unwrap();
@@ -91,23 +91,23 @@ fn test_on_esc() {
     let mut backend = helpers::SnapshotOnFlushBackend::new(size);
     let mut events = TestEvents::new(Some(KeyCode::Esc.into()));
 
-    let res = requestty::prompt_one_with(
+    let res = reequestty::prompt_one_with(
         Question::expand("name")
             .message("message")
             .default('d')
             .choices(('a'..='g').map(|key| (key, format!("Choice {}", key.to_ascii_uppercase()))))
-            .on_esc(requestty::OnEsc::Terminate),
+            .on_esc(reequestty::OnEsc::Terminate),
         &mut backend,
         &mut events,
     );
 
-    assert!(matches!(res, Err(requestty::ErrorKind::Aborted)));
+    assert!(matches!(res, Err(reequestty::ErrorKind::Aborted)));
 
     let size = (50, 20).into();
     let mut backend = helpers::SnapshotOnFlushBackend::new(size);
     let mut events = TestEvents::new(Some(KeyCode::Esc.into()));
 
-    let res = requestty::prompt_with(
+    let res = reequestty::prompt_with(
         Some(
             Question::expand("name")
                 .message("message")
@@ -115,7 +115,7 @@ fn test_on_esc() {
                 .choices(
                     ('a'..='g').map(|key| (key, format!("Choice {}", key.to_ascii_uppercase()))),
                 )
-                .on_esc(requestty::OnEsc::SkipQuestion)
+                .on_esc(reequestty::OnEsc::SkipQuestion)
                 .build(),
         ),
         &mut backend,

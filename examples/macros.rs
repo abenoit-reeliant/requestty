@@ -4,7 +4,7 @@ fn main() {
         .build()
         .unwrap();
 
-    let questions = requestty::questions! [
+    let questions = reequestty::questions! [
         // Use std::array::IntoIter instead of allocating a Vec if available (>= v1.51)
         inline
         Confirm {
@@ -47,7 +47,7 @@ fn main() {
         Expand {
             name: "toppings",
             message: "What about the toppings?",
-            when: |answers: &requestty::Answers| {
+            when: |answers: &reequestty::Answers| {
                 !answers["custom_toppings"].as_bool().unwrap()
             },
             choices: [
@@ -59,7 +59,7 @@ fn main() {
         MultiSelect {
             name: "toppings",
             message: "Select toppings",
-            when: |answers: &requestty::Answers| {
+            when: |answers: &reequestty::Answers| {
                 answers["custom_toppings"].as_bool().unwrap()
             },
             // Array style choices (`[...]`) have special parsing
@@ -102,11 +102,11 @@ fn main() {
             name: "prize",
             message: "For leaving a comment, you get a freebie",
             choices: ["cake", "fries"],
-            when: |answers: &requestty::Answers| {
+            when: |answers: &reequestty::Answers| {
                 answers["comments"].as_string().unwrap() != "Nope, all good!"
             },
         },
     ];
 
-    println!("{:#?}", requestty::prompt(questions));
+    println!("{:#?}", reequestty::prompt(questions));
 }

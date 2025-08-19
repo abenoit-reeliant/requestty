@@ -1,5 +1,5 @@
 fn main() {
-    requestty::questions! [
+    reequestty::questions! [
         OrderSelect {
             name: "name",
             choices: [

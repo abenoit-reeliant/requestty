@@ -1,3 +1,3 @@
 fn main() {
-    let q = requestty::questions![Editor { prompt: todo!() }];
+    let q = reequestty::questions![Editor { prompt: todo!() }];
 }

@@ -1,28 +1,28 @@
 [package]
-name = "requestty"
-version = "0.5.0"
-authors = ["Lutetium Vanadium"]
+name = "reequestty"
+version = "0.5.1"
+authors = ["Lutetium Vanadium", "Antoine Benoit"]
 edition = "2018"
 description = "An easy-to-use collection of interactive cli prompts"
-homepage="https://github.com/Lutetium-Vanadium/requestty#readme"
-repository = "https://github.com/Lutetium-Vanadium/requestty"
-documentation="https://docs.rs/requestty"
+homepage="https://github.com/abenoit-reeliant/reequestty#readme"
+repository = "https://github.com/abenoit-reeliant/reequestty"
+documentation="https://docs.rs/reequestty"
 readme = "README.md"
 license = "MIT"
 keywords = ["interactive", "prompt", "cli", "inquirer", "enquirer"]
 categories = ["command-line-interface", "command-line-utilities"]
-exclude = ["/.github/*", "/assets", "/requestty-ui", "/requestty-macro", "*-snapshots"]
+exclude = ["/.github/*", "/assets", "/reequestty-ui", "/reequestty-macro", "*-snapshots"]
 
 [workspace]
 members = [
     ".",
-    "requestty-ui",
-    "requestty-macro",
+    "reequestty-ui",
+    "reequestty-macro",
 ]
 
 [dependencies]
-ui = { package = "requestty-ui", path = "./requestty-ui", version = "=0.5.0" }
-macro = { package = "requestty-macro", path = "./requestty-macro", optional = true, version = "=0.5.0" }
+ui = { package = "reequestty-ui", path = "./reequestty-ui", version = "=0.5.0" }
+macro = { package = "reequestty-macro", path = "./reequestty-macro", optional = true, version = "=0.5.0" }
 
 tempfile = "3"
 

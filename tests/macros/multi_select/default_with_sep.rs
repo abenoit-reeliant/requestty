@@ -1,5 +1,5 @@
 fn main() {
-    requestty::questions! [
+    reequestty::questions! [
         MultiSelect {
             name: "name",
             choices: [

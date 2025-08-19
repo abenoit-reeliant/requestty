@@ -1,5 +1,5 @@
 fn main() {
-    requestty::questions![Password {
+    reequestty::questions![Password {
         should_loop: todo!()
     }];
 }

@@ -1,9 +1,9 @@
 fn main() {
     let choice = "choice";
 
-    requestty::questions![OrderSelect {
+    reequestty::questions![OrderSelect {
         name: "name",
-        on_esc: requestty::OnEsc::Terminate,
+        on_esc: reequestty::OnEsc::Terminate,
         transform: |_, _, _| Ok(()),
         validate: |_, _| Ok(()),
         filter: |t, _| t,

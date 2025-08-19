@@ -1,6 +1,6 @@
 use rand::prelude::*;
 use rand_chacha::ChaCha12Rng;
-use requestty::question::Choice;
+use reequestty::question::Choice;
 use ui::events::{KeyCode, KeyEvent, TestEvents};
 
 mod helpers;
@@ -26,7 +26,7 @@ fn choices(len: usize) -> impl Iterator<Item = Choice<String>> {
 
 #[test]
 fn test_validate() {
-    let multi_select = requestty::Question::multi_select("name")
+    let multi_select = reequestty::Question::multi_select("name")
         .validate(|checked, _| {
             let count = checked.iter().filter(|&&b| b).count();
             if count > 1 {
@@ -52,7 +52,7 @@ fn test_validate() {
         KeyCode::Enter.into(),
     ]);
 
-    let ans: Vec<_> = requestty::prompt_one_with(multi_select, &mut backend, &mut events)
+    let ans: Vec<_> = reequestty::prompt_one_with(multi_select, &mut backend, &mut events)
         .unwrap()
         .try_into_list_items()
         .unwrap()
@@ -65,7 +65,7 @@ fn test_validate() {
 
 #[test]
 fn test_filter() {
-    let multi_select = requestty::Question::multi_select("name")
+    let multi_select = reequestty::Question::multi_select("name")
         .filter(|mut checked, _| {
             checked.iter_mut().for_each(|b| *b = !*b);
             checked
@@ -83,7 +83,7 @@ fn test_filter() {
         KeyCode::Enter.into(),
     ]);
 
-    let ans: Vec<_> = requestty::prompt_one_with(multi_select, &mut backend, &mut events)
+    let ans: Vec<_> = reequestty::prompt_one_with(multi_select, &mut backend, &mut events)
         .unwrap()
         .try_into_list_items()
         .unwrap()
@@ -96,7 +96,7 @@ fn test_filter() {
 
 #[test]
 fn test_transform() {
-    let multi_select = requestty::Question::multi_select("name")
+    let multi_select = reequestty::Question::multi_select("name")
         .transform(|items, _, b| {
             b.set_fg(ui::style::Color::Magenta)?;
             for (i, item) in items.iter().enumerate() {
@@ -120,7 +120,7 @@ fn test_transform() {
         KeyCode::Enter.into(),
     ]);
 
-    let ans: Vec<_> = requestty::prompt_one_with(multi_select, &mut backend, &mut events)
+    let ans: Vec<_> = reequestty::prompt_one_with(multi_select, &mut backend, &mut events)
         .unwrap()
         .try_into_list_items()
         .unwrap()
@@ -137,27 +137,27 @@ fn test_on_esc() {
     let mut backend = helpers::SnapshotOnFlushBackend::new(size);
     let mut events = TestEvents::new(Some(KeyCode::Esc.into()));
 
-    let res = requestty::prompt_one_with(
-        requestty::Question::multi_select("name")
+    let res = reequestty::prompt_one_with(
+        reequestty::Question::multi_select("name")
             .message("message")
             .choices(choices(10))
-            .on_esc(requestty::OnEsc::Terminate),
+            .on_esc(reequestty::OnEsc::Terminate),
         &mut backend,
         &mut events,
     );
 
-    assert!(matches!(res, Err(requestty::ErrorKind::Aborted)));
+    assert!(matches!(res, Err(reequestty::ErrorKind::Aborted)));
 
     let size = (50, 20).into();
     let mut backend = helpers::SnapshotOnFlushBackend::new(size);
     let mut events = TestEvents::new(Some(KeyCode::Esc.into()));
 
-    let res = requestty::prompt_with(
+    let res = reequestty::prompt_with(
         Some(
-            requestty::Question::multi_select("name")
+            reequestty::Question::multi_select("name")
                 .message("message")
                 .choices(choices(10))
-                .on_esc(requestty::OnEsc::SkipQuestion)
+                .on_esc(reequestty::OnEsc::SkipQuestion)
                 .build(),
         ),
         &mut backend,

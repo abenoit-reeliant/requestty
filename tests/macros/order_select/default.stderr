@@ -1,5 +1,5 @@
 error: option `default` does not exist for kind `order_select`
  --> tests/macros/order_select/default.rs:2:41
   |
-2 |     requestty::questions![OrderSelect { default: todo!() }];
+2 |     reequestty::questions![OrderSelect { default: todo!() }];
   |                                         ^^^^^^^

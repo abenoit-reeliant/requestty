@@ -81,7 +81,7 @@ use options::Options;
 /// # Examples
 ///
 /// ```
-/// use requestty::Question;
+/// use reequestty::Question;
 ///
 /// let question = Question::input("name")
 ///     .message("What is your name?")
@@ -111,7 +111,7 @@ impl Question<'static> {
     /// Prompt that takes user input and returns a [`String`]
     ///
     /// <img
-    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/requestty/master/assets/input.gif"
+    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/reequestty/master/assets/input.gif"
     ///   style="max-height: 11rem"
     /// />
     ///
@@ -120,7 +120,7 @@ impl Question<'static> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let input = Question::input("name")
     ///     .message("What is your name?")
@@ -141,14 +141,14 @@ impl Question<'static> {
     /// How it looks if you set a mask:
     ///
     /// <img
-    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/requestty/master/assets/password-mask.gif"
+    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/reequestty/master/assets/password-mask.gif"
     ///   style="max-height: 11rem"
     /// />
     ///
     /// How it looks if you do not set a mask:
     ///
     /// <img
-    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/requestty/master/assets/password-hidden.gif"
+    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/reequestty/master/assets/password-hidden.gif"
     ///   style="max-height: 11rem"
     /// />
     ///
@@ -157,7 +157,7 @@ impl Question<'static> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let password = Question::password("password")
     ///     .message("What is your password?")
@@ -178,7 +178,7 @@ impl Question<'static> {
     /// those are present, `vim` (for unix) or `notepad` (for windows) is used.
     ///
     /// <img
-    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/requestty/master/assets/editor.gif"
+    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/reequestty/master/assets/editor.gif"
     ///   style="max-height: 30rem"
     /// />
     ///
@@ -187,7 +187,7 @@ impl Question<'static> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let editor = Question::editor("description")
     ///     .message("Please enter a short description about yourself")
@@ -204,7 +204,7 @@ impl Question<'static> {
     /// Prompt that returns `true` or `false`.
     ///
     /// <img
-    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/requestty/master/assets/confirm.gif"
+    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/reequestty/master/assets/confirm.gif"
     ///   style="max-height: 11rem"
     /// />
     ///
@@ -213,7 +213,7 @@ impl Question<'static> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let confirm = Question::confirm("anonymous")
     ///     .message("Do you want to remain anonymous?")
@@ -230,7 +230,7 @@ impl Question<'static> {
     /// The number is parsed using [`from_str`].
     ///
     /// <img
-    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/requestty/master/assets/int.gif"
+    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/reequestty/master/assets/int.gif"
     ///   style="max-height: 11rem"
     /// />
     ///
@@ -239,7 +239,7 @@ impl Question<'static> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let int = Question::int("age")
     ///     .message("What is your age?")
@@ -264,7 +264,7 @@ impl Question<'static> {
     /// The number is parsed using [`from_str`], but cannot be `NaN`.
     ///
     /// <img
-    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/requestty/master/assets/float.gif"
+    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/reequestty/master/assets/float.gif"
     ///   style="max-height: 11rem"
     /// />
     ///
@@ -273,7 +273,7 @@ impl Question<'static> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let float = Question::float("number")
     ///     .message("What is your favourite number?")
@@ -302,7 +302,7 @@ impl Question<'static> {
     /// but [`Choice::Separator`]s can only be single line.
     ///
     /// <img
-    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/requestty/master/assets/expand.gif"
+    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/reequestty/master/assets/expand.gif"
     ///   style="max-height: 15rem"
     /// />
     ///
@@ -311,7 +311,7 @@ impl Question<'static> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let expand = Question::expand("overwrite")
     ///     .message("Conflict on `file.rs`")
@@ -336,7 +336,7 @@ impl Question<'static> {
     /// but [`Choice::Separator`]s can only be single line.
     ///
     /// <img
-    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/requestty/master/assets/select.gif"
+    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/reequestty/master/assets/select.gif"
     ///   style="max-height: 15rem"
     /// />
     ///
@@ -345,7 +345,7 @@ impl Question<'static> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Question, DefaultSeparator};
+    /// use reequestty::{Question, DefaultSeparator};
     ///
     /// let select = Question::select("theme")
     ///     .message("What do you want to do?")
@@ -371,7 +371,7 @@ impl Question<'static> {
     /// but [`Choice::Separator`]s can only be single line.
     ///
     /// <img
-    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/requestty/master/assets/raw-select.gif"
+    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/reequestty/master/assets/raw-select.gif"
     ///   style="max-height: 15rem"
     /// />
     ///
@@ -380,7 +380,7 @@ impl Question<'static> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Question, DefaultSeparator};
+    /// use reequestty::{Question, DefaultSeparator};
     ///
     /// let raw_select = Question::raw_select("theme")
     ///     .message("What do you want to do?")
@@ -408,7 +408,7 @@ impl Question<'static> {
     /// but [`Choice::Separator`]s can only be single line.
     ///
     /// <img
-    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/requestty/master/assets/multi-select.gif"
+    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/reequestty/master/assets/multi-select.gif"
     ///   style="max-height: 20rem"
     /// />
     ///
@@ -417,7 +417,7 @@ impl Question<'static> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Question, DefaultSeparator};
+    /// use reequestty::{Question, DefaultSeparator};
     ///
     /// let multi_select = Question::multi_select("cheese")
     ///     .message("What cheese do you want?")
@@ -439,7 +439,7 @@ impl Question<'static> {
     /// The choices are [`String`]s and can be multiline.
     ///
     /// <img
-    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/requestty/master/assets/order-select.gif"
+    ///   src="https://raw.githubusercontent.com/lutetium-vanadium/reequestty/master/assets/order-select.gif"
     ///   style="max-height: 20rem"
     /// />
     ///
@@ -448,7 +448,7 @@ impl Question<'static> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Question, DefaultSeparator};
+    /// use reequestty::{Question, DefaultSeparator};
     ///
     /// let multi_select = Question::order_select("tasks")
     ///     .message("Please organize the tasks to be done at home")
@@ -473,7 +473,7 @@ impl Question<'static> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{prompt, Question};
+    /// use reequestty::{prompt, Question};
     ///
     /// #[derive(Debug)]
     /// struct MyPrompt { /* ... */ }
@@ -491,7 +491,7 @@ impl Question<'static> {
     ///         answers: &prompt::Answers,
     ///         backend: &mut dyn prompt::Backend,
     ///         events: &mut dyn prompt::EventIterator,
-    ///     ) -> requestty::Result<Option<prompt::Answer>> {
+    ///     ) -> reequestty::Result<Option<prompt::Answer>> {
     /// #       todo!()
     ///         /* ... */
     ///     }

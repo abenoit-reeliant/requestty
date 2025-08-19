@@ -1,4 +1,4 @@
-//! `requestty` (request-tty) is an easy-to-use collection of interactive cli prompts inspired by
+//! `reequestty` (request-tty) is an easy-to-use collection of interactive cli prompts inspired by
 //! [Inquirer.js].
 //!
 //! [Inquirer.js]: https://github.com/SBoudrias/Inquirer.js/
@@ -13,7 +13,7 @@
 //! ### Using builders
 //!
 //! ```
-//! use requestty::{Question, Answers};
+//! use reequestty::{Question, Answers};
 //!
 //! let question = Question::expand("toppings")
 //!     .message("What toppings do you want?")
@@ -32,7 +32,7 @@
 //!
 #![cfg_attr(feature = "macros", doc = "```")]
 #![cfg_attr(not(feature = "macros"), doc = "```ignore")]
-//! use requestty::{questions, Answers};
+//! use reequestty::{questions, Answers};
 //!
 //! let questions = questions! [
 //!     Expand {
@@ -60,20 +60,20 @@
 //!       // Declare the questions you want to ask
 //!   ];
 //!
-//!   let answers = requestty::prompt(questions)?;
-//!   # Result::<_, requestty::ErrorKind>::Ok(())
+//!   let answers = reequestty::prompt(questions)?;
+//!   # Result::<_, reequestty::ErrorKind>::Ok(())
 //!   ```
 //!
 //! - Using [`PromptModule`]
 //!   ```no_run
-//!   use requestty::PromptModule;
+//!   use reequestty::PromptModule;
 //!
 //!   let questions = PromptModule::new(vec![
 //!       // Declare the questions you want to ask
 //!   ]);
 //!
 //!   let answers = questions.prompt_all()?;
-//!   # Result::<_, requestty::ErrorKind>::Ok(())
+//!   # Result::<_, reequestty::ErrorKind>::Ok(())
 //!   ```
 //!   This is mainly useful if you need more control over prompting the questions, and using
 //!   previous [`Answers`].
@@ -121,23 +121,23 @@
 //! # Examples
 //!
 //! ```no_run
-//! use requestty::Question;
+//! use reequestty::Question;
 //!
 //! let password = Question::password("password")
 //!     .message("What is your password?")
 //!     .mask('*')
 //!     .build();
 //!
-//! let answer = requestty::prompt_one(password)?;
+//! let answer = reequestty::prompt_one(password)?;
 //!
 //! println!("Your password was: {}", answer.as_string().expect("password returns a string"));
-//! # Result::<_, requestty::ErrorKind>::Ok(())
+//! # Result::<_, reequestty::ErrorKind>::Ok(())
 //! ```
 //!
 //! For more examples, see the documentation for the various in-built questions, and the
 //! [`examples`] directory.
 //!
-//! [`examples`]: https://github.com/lutetium-vanadium/requestty/tree/master/examples
+//! [`examples`]: https://github.com/lutetium-vanadium/reequestty/tree/master/examples
 #![deny(
     missing_docs,
     missing_debug_implementations,
@@ -165,7 +165,7 @@ use ui::{backend::Backend, events::EventIterator};
 /// # let some_variable = "message";
 /// # let when = true;
 /// # fn get_default() -> bool { true }
-/// use requestty::questions;
+/// use reequestty::questions;
 ///
 /// let questions = questions![
 ///     MultiSelect {
@@ -202,7 +202,7 @@ use ui::{backend::Backend, events::EventIterator};
 /// By default, the questions are stored in a [`Vec`]. However, if you wish to store the questions
 /// on the stack, prefix the questions with `inline`:
 /// ```
-/// use requestty::questions;
+/// use reequestty::questions;
 ///
 /// let questions = questions! [ inline
 ///     Input {

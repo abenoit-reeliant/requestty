@@ -1,3 +1,3 @@
 fn main() {
-    let q = requestty::questions![unknown {}];
+    let q = reequestty::questions![unknown {}];
 }

@@ -1,8 +1,16 @@
 # Changelog
 
+## `0.5.1`
+
+- `reequestty` (fork of `reequestty`)
+
+- `reequestty-ui`
+
+  - Use the cross symbol for not selected items in multiselect
+
 ## `0.5.0`
 
-- `requestty`
+- `reequestty`
 
   - Update the way indices are shown in `RawSelect`
 
@@ -10,7 +18,7 @@
 
   - [bug fix] Support multi-word editor commands (#14)
 
-- `requestty-ui`
+- `reequestty-ui`
 
   - [bug fix] Add support for rendering wide characters. (#18, #19 and
     #20)
@@ -21,7 +29,7 @@
 
 ## `0.4.1`
 
-- `requestty-ui`
+- `reequestty-ui`
 
   - Remove `dbg!` in `Input`. Fixes #12
 
@@ -29,13 +37,13 @@
 
 The msrv has been bumped up to `1.56`
 
-- `requestty`
+- `reequestty`
 
   - Allow programmatic customisation of `Question::editor`
 
   - Update `smallvec` version.
 
-- `requestty-ui`
+- `reequestty-ui`
 
   - Allow customising the symbol set used during rendering.
 
@@ -45,7 +53,7 @@ The msrv has been bumped up to `1.56`
 
 ## `0.3.0`
 
-- `requestty`
+- `reequestty`
 
   - Allow using the Right Arrow key to auto-complete default
 
@@ -63,7 +71,7 @@ The msrv has been bumped up to `1.56`
 
   - Fix #7 - input returns empty string even if default was given
 
-- `requestty-ui`
+- `reequestty-ui`
 
   - Added `OnEsc` to configure behaviour on `Esc` for `Input`s
 
@@ -84,7 +92,7 @@ The msrv has been bumped up to `1.56`
 
 ## `0.2.1`
 
-- `requestty`
+- `reequestty`
 
   - Implement #4 - defaults are now shown in a different way for the
     `input`, `int` and `float` prompts.
@@ -107,20 +115,20 @@ The msrv has been bumped up to `1.56`
 
 ## `0.1.3`
 
-- `requestty`
+- `reequestty`
 
   - Fix #3
 
-- `requestty-ui`
+- `reequestty-ui`
   - Update crossterm dependency
 
 ## `0.1.2`
 
-- `requestty`
+- `reequestty`
 
   - Fix #2
 
-- `requestty-ui`
+- `reequestty-ui`
   - Change `Widget::cursor_pos` to return the position relative to the
     screen instead of the start of the root widget
   - Update dependencies

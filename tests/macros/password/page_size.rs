@@ -1,3 +1,3 @@
 fn main() {
-    requestty::questions![Password { page_size: todo!() }];
+    reequestty::questions![Password { page_size: todo!() }];
 }

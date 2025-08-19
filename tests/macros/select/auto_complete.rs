@@ -1,5 +1,5 @@
 fn main() {
-    requestty::questions![Select {
+    reequestty::questions![Select {
         auto_complete: todo!()
     }];
 }

@@ -1,5 +1,5 @@
 fn main() {
-    let question = requestty::Question::float("number")
+    let question = reequestty::Question::float("number")
         .message("What is your favourite number?")
         .validate(|num, _| {
             if num.is_finite() {
@@ -10,5 +10,5 @@ fn main() {
         })
         .build();
 
-    println!("{:#?}", requestty::prompt_one(question));
+    println!("{:#?}", reequestty::prompt_one(question));
 }

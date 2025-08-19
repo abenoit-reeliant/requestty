@@ -1,0 +1,27 @@
+---
+source: reequestty-ui/src/select/tests.rs
+expression: backend
+
+---
+┌────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                                    │
+│6 list item                                                                                         │
+│7 list item                                                                                         │
+│8 list item                                                                                         │
+│9 list item                                                                                         │
+│10 list item                                                                                        │
+│11 list item                                                                                        │
+│12 list item                                                                                        │
+│[38;5;6m13 list item[39m                                                                                        │
+│14 list item                                                                                        │
+│[38;5;8m(Move up and down to reveal more choices)[39m                                                           │
+│[38;5;0m[48;5;7m [39m[49m                                                                                                   │
+│                                                                                                    │
+│                                                                                                    │
+│                                                                                                    │
+│                                                                                                    │
+│                                                                                                    │
+│                                                                                                    │
+│                                                                                                    │
+│                                                                                                    │
+└────────────────────────────────────────────────────────────────────────────────────────────────────┘

@@ -6,7 +6,7 @@ use crate::question::{Completions, Options};
 /// The builder for an [`input`] prompt.
 ///
 /// <img
-///   src="https://raw.githubusercontent.com/lutetium-vanadium/requestty/master/assets/input.gif"
+///   src="https://raw.githubusercontent.com/lutetium-vanadium/reequestty/master/assets/input.gif"
 ///   style="max-height: 11rem"
 /// />
 ///
@@ -15,7 +15,7 @@ use crate::question::{Completions, Options};
 /// # Examples
 ///
 /// ```
-/// use requestty::Question;
+/// use reequestty::Question;
 ///
 /// let input = Question::input("name")
 ///     .message("What is your name?")
@@ -46,7 +46,7 @@ impl<'a> InputBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let input = Question::input("name")
     ///     .message("What is your name?")
@@ -57,7 +57,7 @@ impl<'a> InputBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Question, Answers};
+    /// use reequestty::{Question, Answers};
     ///
     /// let input = Question::input("name")
     ///     .when(|previous_answers: &Answers| match previous_answers.get("anonymous") {
@@ -71,7 +71,7 @@ impl<'a> InputBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Question, Answers};
+    /// use reequestty::{Question, Answers};
     ///
     /// let input = Question::input("name")
     ///     .ask_if_answered(true)
@@ -82,7 +82,7 @@ impl<'a> InputBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Question, Answers, OnEsc};
+    /// use reequestty::{Question, Answers, OnEsc};
     ///
     /// let input = Question::input("name")
     ///     .on_esc(OnEsc::Terminate)
@@ -100,7 +100,7 @@ impl<'a> InputBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let input = Question::input("name")
     ///     .default("John Doe")
@@ -117,7 +117,7 @@ impl<'a> InputBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Question, question::completions};
+    /// use reequestty::{Question, question::completions};
     ///
     /// let input = Question::input("name")
     ///     .auto_complete(|name, previous_answers| {
@@ -128,7 +128,7 @@ impl<'a> InputBuilder<'a> {
     ///
     /// For a better example on `auto_complete`, see [`examples/file_auto_complete.rs`]
     ///
-    /// [`examples/file_auto_complete.rs`]: https://github.com/Lutetium-Vanadium/requestty/blob/master/examples/file_auto_complete.rs
+    /// [`examples/file_auto_complete.rs`]: https://github.com/Lutetium-Vanadium/reequestty/blob/master/examples/file_auto_complete.rs
     String; input
     }
 
@@ -148,7 +148,7 @@ impl<'a> InputBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let input = Question::input("name")
     ///     .page_size(10)
@@ -171,7 +171,7 @@ impl<'a> InputBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let input = Question::input("name")
     ///     .should_loop(false)
@@ -186,7 +186,7 @@ impl<'a> InputBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let input = Question::input("name")
     ///     .filter(|name, previous_answers| name + "!")
@@ -199,7 +199,7 @@ impl<'a> InputBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let input = Question::input("name")
     ///     .validate(|name, previous_answers| if name.split_whitespace().count() >= 2 {
@@ -216,9 +216,9 @@ impl<'a> InputBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
-    /// fn validate(name: &str, previous_answers: &requestty::Answers) -> bool {
+    /// fn validate(name: &str, previous_answers: &reequestty::Answers) -> bool {
     ///     name.split_whitespace().count() >= 2
     /// }
     ///
@@ -239,7 +239,7 @@ impl<'a> InputBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let input = Question::input("name")
     ///     .transform(|name, previous_answers, backend| {

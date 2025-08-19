@@ -1,3 +1,3 @@
 fn main() {
-    requestty::questions![Confirm { page_size: todo!() }];
+    reequestty::questions![Confirm { page_size: todo!() }];
 }

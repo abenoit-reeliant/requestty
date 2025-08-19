@@ -112,7 +112,7 @@ impl<'a> Confirm<'a> {
 /// The builder for a [`confirm`] prompt.
 ///
 /// <img
-///   src="https://raw.githubusercontent.com/lutetium-vanadium/requestty/master/assets/confirm.gif"
+///   src="https://raw.githubusercontent.com/lutetium-vanadium/reequestty/master/assets/confirm.gif"
 ///   style="max-height: 11rem"
 /// />
 ///
@@ -121,7 +121,7 @@ impl<'a> Confirm<'a> {
 /// # Examples
 ///
 /// ```
-/// use requestty::Question;
+/// use reequestty::Question;
 ///
 /// let confirm = Question::confirm("anonymous")
 ///     .message("Do you want to remain anonymous?")
@@ -148,7 +148,7 @@ impl<'a> ConfirmBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let confirm = Question::confirm("anonymous")
     ///     .message("Do you want to remain anonymous?")
@@ -159,7 +159,7 @@ impl<'a> ConfirmBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Question, Answers};
+    /// use reequestty::{Question, Answers};
     ///
     /// let confirm = Question::confirm("anonymous")
     ///     .when(|previous_answers: &Answers| match previous_answers.get("auth") {
@@ -173,7 +173,7 @@ impl<'a> ConfirmBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let confirm = Question::confirm("anonymous")
     ///     .ask_if_answered(true)
@@ -184,7 +184,7 @@ impl<'a> ConfirmBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Question, OnEsc};
+    /// use reequestty::{Question, OnEsc};
     ///
     /// let confirm = Question::confirm("anonymous")
     ///     .on_esc(OnEsc::Terminate)
@@ -199,7 +199,7 @@ impl<'a> ConfirmBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let confirm = Question::confirm("anonymous")
     ///     .default(false)
@@ -214,7 +214,7 @@ impl<'a> ConfirmBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let confirm = Question::confirm("anonymous")
     ///     .transform(|anonymous, previous_answers, backend| {

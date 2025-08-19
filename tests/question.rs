@@ -1,4 +1,4 @@
-use requestty::{prompt::*, question::CustomPromptBuilder, Question};
+use reequestty::{prompt::*, question::CustomPromptBuilder, Question};
 
 #[derive(Debug)]
 struct Validate<'a> {
@@ -13,7 +13,7 @@ impl Prompt for Validate<'_> {
         _: &Answers,
         _: &mut dyn Backend,
         _: &mut dyn EventIterator,
-    ) -> requestty::Result<Option<Answer>> {
+    ) -> reequestty::Result<Option<Answer>> {
         assert_eq!(message, self.message);
         *self.prompted = true;
 
@@ -30,7 +30,7 @@ fn custom_prompt<'a>(
 }
 
 fn prompt_all<'a>(questions: impl IntoIterator<Item = Question<'a>>) {
-    requestty::prompt_with(
+    reequestty::prompt_with(
         questions,
         &mut ui::backend::TestBackend::new((1, 1).into()),
         &mut ui::events::TestEvents::empty(),
@@ -74,7 +74,7 @@ fn test_when() {
             .build(),
         custom_prompt("name-1", "message", &mut prompted_1)
             .message("message")
-            .when(|ans: &requestty::Answers| !ans.is_empty())
+            .when(|ans: &reequestty::Answers| !ans.is_empty())
             .build(),
     ]);
 

@@ -1,4 +1,4 @@
-use requestty::{question::Completions, Answer, Question};
+use reequestty::{question::Completions, Answer, Question};
 use ui::{
     events::{KeyCode, TestEvents},
     style::Color,
@@ -26,7 +26,7 @@ fn test_validate() {
         KeyCode::Enter.into(),
     ]);
 
-    let ans = requestty::prompt_one_with(prompt, &mut backend, &mut events).unwrap();
+    let ans = reequestty::prompt_one_with(prompt, &mut backend, &mut events).unwrap();
     assert_eq!(ans, Answer::String("str".into()));
 }
 
@@ -53,7 +53,7 @@ fn test_validate_on_key() {
         KeyCode::Enter.into(),
     ]);
 
-    let ans = requestty::prompt_one_with(prompt, &mut backend, &mut events).unwrap();
+    let ans = reequestty::prompt_one_with(prompt, &mut backend, &mut events).unwrap();
     assert_eq!(ans, Answer::String("str".into()));
 }
 
@@ -71,7 +71,7 @@ fn test_filter() {
         KeyCode::Enter.into(),
     ]);
 
-    let ans = requestty::prompt_one_with(prompt, &mut backend, &mut events).unwrap();
+    let ans = reequestty::prompt_one_with(prompt, &mut backend, &mut events).unwrap();
     assert_eq!(ans, Answer::String("str--suffix".into()));
 }
 
@@ -93,7 +93,7 @@ fn test_transform() {
         KeyCode::Enter.into(),
     ]);
 
-    let ans = requestty::prompt_one_with(prompt, &mut backend, &mut events).unwrap();
+    let ans = reequestty::prompt_one_with(prompt, &mut backend, &mut events).unwrap();
     assert_eq!(ans, Answer::String("str".into()));
 }
 
@@ -110,7 +110,7 @@ fn test_default() {
         KeyCode::Enter.into(),
     ]);
 
-    let ans = requestty::prompt_one_with(prompt, &mut backend, &mut events).unwrap();
+    let ans = reequestty::prompt_one_with(prompt, &mut backend, &mut events).unwrap();
     assert_eq!(ans, Answer::String("default".into()));
 
     let prompt = Question::input("name")
@@ -120,7 +120,7 @@ fn test_default() {
     let mut backend = helpers::SnapshotOnFlushBackend::new((50, 20).into());
     let mut events = TestEvents::new(Some(KeyCode::Enter.into()));
 
-    let ans = requestty::prompt_one_with(prompt, &mut backend, &mut events).unwrap();
+    let ans = reequestty::prompt_one_with(prompt, &mut backend, &mut events).unwrap();
     assert_eq!(ans, Answer::String("default".into()));
 
     let prompt = Question::input("name")
@@ -130,7 +130,7 @@ fn test_default() {
     let mut backend = helpers::SnapshotOnFlushBackend::new((50, 20).into());
     let mut events = TestEvents::new(vec![KeyCode::Tab.into(), KeyCode::Enter.into()]);
 
-    let ans = requestty::prompt_one_with(prompt, &mut backend, &mut events).unwrap();
+    let ans = reequestty::prompt_one_with(prompt, &mut backend, &mut events).unwrap();
     assert_eq!(ans, Answer::String("default".into()));
 
     let prompt = Question::input("name")
@@ -140,7 +140,7 @@ fn test_default() {
     let mut backend = helpers::SnapshotOnFlushBackend::new((50, 20).into());
     let mut events = TestEvents::new(vec![KeyCode::Right.into(), KeyCode::Enter.into()]);
 
-    let ans = requestty::prompt_one_with(prompt, &mut backend, &mut events).unwrap();
+    let ans = reequestty::prompt_one_with(prompt, &mut backend, &mut events).unwrap();
     assert_eq!(ans, Answer::String("default".into()));
 }
 
@@ -173,7 +173,7 @@ fn test_auto_complete() {
         KeyCode::Enter.into(),
     ]);
 
-    let ans = requestty::prompt_one_with(prompt, &mut backend, &mut events).unwrap();
+    let ans = reequestty::prompt_one_with(prompt, &mut backend, &mut events).unwrap();
     assert_eq!(ans, Answer::String("string".into()));
 }
 
@@ -183,25 +183,25 @@ fn test_on_esc() {
     let mut backend = helpers::SnapshotOnFlushBackend::new(size);
     let mut events = TestEvents::new(Some(KeyCode::Esc.into()));
 
-    let res = requestty::prompt_one_with(
+    let res = reequestty::prompt_one_with(
         Question::input("name")
             .message("message")
-            .on_esc(requestty::OnEsc::Terminate),
+            .on_esc(reequestty::OnEsc::Terminate),
         &mut backend,
         &mut events,
     );
 
-    assert!(matches!(res, Err(requestty::ErrorKind::Aborted)));
+    assert!(matches!(res, Err(reequestty::ErrorKind::Aborted)));
 
     let size = (50, 20).into();
     let mut backend = helpers::SnapshotOnFlushBackend::new(size);
     let mut events = TestEvents::new(Some(KeyCode::Esc.into()));
 
-    let res = requestty::prompt_with(
+    let res = reequestty::prompt_with(
         Some(
             Question::input("name")
                 .message("message")
-                .on_esc(requestty::OnEsc::SkipQuestion)
+                .on_esc(reequestty::OnEsc::SkipQuestion)
                 .build(),
         ),
         &mut backend,

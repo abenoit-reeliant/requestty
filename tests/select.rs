@@ -1,6 +1,6 @@
 use rand::prelude::*;
 use rand_chacha::ChaCha12Rng;
-use requestty::question::Choice;
+use reequestty::question::Choice;
 use ui::events::{KeyCode, KeyEvent, TestEvents};
 
 mod helpers;
@@ -26,7 +26,7 @@ fn choices(len: usize) -> impl Iterator<Item = Choice<String>> {
 
 #[test]
 fn test_transform() {
-    let select = requestty::Question::select("name")
+    let select = reequestty::Question::select("name")
         .transform(|item, _, b| {
             b.set_fg(ui::style::Color::Magenta)?;
             write!(b, "{}: {}", item.index, item.text)?;
@@ -43,7 +43,7 @@ fn test_transform() {
         KeyCode::Enter.into(),
     ]);
 
-    let ans = requestty::prompt_one_with(select, &mut backend, &mut events)
+    let ans = reequestty::prompt_one_with(select, &mut backend, &mut events)
         .unwrap()
         .try_into_list_item()
         .unwrap();
@@ -57,27 +57,27 @@ fn test_on_esc() {
     let mut backend = helpers::SnapshotOnFlushBackend::new(size);
     let mut events = TestEvents::new(Some(KeyCode::Esc.into()));
 
-    let res = requestty::prompt_one_with(
-        requestty::Question::select("name")
+    let res = reequestty::prompt_one_with(
+        reequestty::Question::select("name")
             .message("message")
             .choices(choices(10))
-            .on_esc(requestty::OnEsc::Terminate),
+            .on_esc(reequestty::OnEsc::Terminate),
         &mut backend,
         &mut events,
     );
 
-    assert!(matches!(res, Err(requestty::ErrorKind::Aborted)));
+    assert!(matches!(res, Err(reequestty::ErrorKind::Aborted)));
 
     let size = (50, 20).into();
     let mut backend = helpers::SnapshotOnFlushBackend::new(size);
     let mut events = TestEvents::new(Some(KeyCode::Esc.into()));
 
-    let res = requestty::prompt_with(
+    let res = reequestty::prompt_with(
         Some(
-            requestty::Question::select("name")
+            reequestty::Question::select("name")
                 .message("message")
                 .choices(choices(10))
-                .on_esc(requestty::OnEsc::SkipQuestion)
+                .on_esc(reequestty::OnEsc::SkipQuestion)
                 .build(),
         ),
         &mut backend,

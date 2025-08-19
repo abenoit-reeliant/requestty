@@ -10,7 +10,7 @@ use super::{OrderSelect, OrderSelectItem};
 /// The choices are [`String`]s and can be multiline.
 ///
 /// <img
-///   src="https://raw.githubusercontent.com/lutetium-vanadium/requestty/master/assets/order-select.gif"
+///   src="https://raw.githubusercontent.com/lutetium-vanadium/reequestty/master/assets/order-select.gif"
 ///   style="max-height: 20rem"
 /// />
 ///
@@ -19,7 +19,7 @@ use super::{OrderSelect, OrderSelectItem};
 /// # Examples
 ///
 /// ```
-/// use requestty::Question;
+/// use reequestty::Question;
 ///
 /// let order_select = Question::order_select("home_tasks")
 ///     .message("Please organize the tasks to be done at home")
@@ -52,7 +52,7 @@ impl<'a> OrderSelectBuilder<'a> {
         /// # Examples
         ///
         /// ```
-        /// use requestty::Question;
+        /// use reequestty::Question;
         ///
         /// let order_select = Question::order_select("home_tasks")
         ///     .message("Organize the tasks to be done at home")
@@ -64,7 +64,7 @@ impl<'a> OrderSelectBuilder<'a> {
         /// # Examples
         ///
         /// ```
-        /// use requestty::{Answers, Question};
+        /// use reequestty::{Answers, Question};
         ///
         /// let order_select = Question::order_select("home_tasks")
         ///     //...
@@ -80,7 +80,7 @@ impl<'a> OrderSelectBuilder<'a> {
         /// # Examples
         ///
         /// ```
-        /// use requestty::{Answers, Question};
+        /// use reequestty::{Answers, Question};
         ///
         /// let order_select = Question::order_select("home_tasks")
         ///     //...
@@ -93,7 +93,7 @@ impl<'a> OrderSelectBuilder<'a> {
         /// # Examples
         ///
         /// ```
-        /// use requestty::{Answers, Question, OnEsc};
+        /// use reequestty::{Answers, Question, OnEsc};
         ///
         /// let order_select = Question::order_select("home_tasks")
         ///     //...
@@ -116,7 +116,7 @@ impl<'a> OrderSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let order_select = Question::order_select("cheese")
     ///     .page_size(10)
@@ -136,7 +136,7 @@ impl<'a> OrderSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let order_select = Question::order_select("cheese")
     ///     .should_loop(false)
@@ -156,7 +156,7 @@ impl<'a> OrderSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let order_select = Question::order_select("hamburger")
     ///     //...
@@ -194,7 +194,7 @@ impl<'a> OrderSelectBuilder<'a> {
         /// # Examples
         ///
         /// ```
-        /// use requestty::Question;
+        /// use reequestty::Question;
         ///
         /// let order_select = Question::order_select("evil_home_tasks")
         ///     //...
@@ -212,7 +212,7 @@ impl<'a> OrderSelectBuilder<'a> {
         /// # Examples
         ///
         /// ```
-        /// use requestty::Question;
+        /// use reequestty::Question;
         ///
         /// let order_select = Question::order_select("home_tasks")
         ///     //...
@@ -233,7 +233,7 @@ impl<'a> OrderSelectBuilder<'a> {
         /// # Examples
         ///
         /// ```
-        /// use requestty::Question;
+        /// use reequestty::Question;
         ///
         /// let order_select = Question::order_select("items")
         ///     //...

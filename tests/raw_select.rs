@@ -1,6 +1,6 @@
 use rand::prelude::*;
 use rand_chacha::ChaCha12Rng;
-use requestty::{question::Choice, Question};
+use reequestty::{question::Choice, Question};
 use ui::{
     events::{KeyCode, TestEvents},
     style::Color,
@@ -48,7 +48,7 @@ fn test_tranform() {
         KeyCode::Enter.into(),
     ]);
 
-    let ans = requestty::prompt_one_with(raw_select, &mut backend, &mut events)
+    let ans = reequestty::prompt_one_with(raw_select, &mut backend, &mut events)
         .unwrap()
         .try_into_list_item()
         .unwrap();
@@ -68,7 +68,7 @@ fn test_default() {
     let mut backend = helpers::SnapshotOnFlushBackend::new(size);
     let mut events = TestEvents::new(Some(KeyCode::Enter.into()));
 
-    let ans = requestty::prompt_one_with(raw_select, &mut backend, &mut events)
+    let ans = reequestty::prompt_one_with(raw_select, &mut backend, &mut events)
         .unwrap()
         .try_into_list_item()
         .unwrap();
@@ -97,7 +97,7 @@ fn test_validate() {
         KeyCode::Enter.into(),
     ]);
 
-    let ans = requestty::prompt_one_with(raw_select, &mut backend, &mut events)
+    let ans = reequestty::prompt_one_with(raw_select, &mut backend, &mut events)
         .unwrap()
         .try_into_list_item()
         .unwrap();
@@ -111,27 +111,27 @@ fn test_on_esc() {
     let mut backend = helpers::SnapshotOnFlushBackend::new(size);
     let mut events = TestEvents::new(Some(KeyCode::Esc.into()));
 
-    let res = requestty::prompt_one_with(
+    let res = reequestty::prompt_one_with(
         Question::raw_select("name")
             .message("message")
             .choices(choices(10))
-            .on_esc(requestty::OnEsc::Terminate),
+            .on_esc(reequestty::OnEsc::Terminate),
         &mut backend,
         &mut events,
     );
 
-    assert!(matches!(res, Err(requestty::ErrorKind::Aborted)));
+    assert!(matches!(res, Err(reequestty::ErrorKind::Aborted)));
 
     let size = (50, 20).into();
     let mut backend = helpers::SnapshotOnFlushBackend::new(size);
     let mut events = TestEvents::new(Some(KeyCode::Esc.into()));
 
-    let res = requestty::prompt_with(
+    let res = reequestty::prompt_with(
         Some(
             Question::raw_select("name")
                 .message("message")
                 .choices(choices(10))
-                .on_esc(requestty::OnEsc::SkipQuestion)
+                .on_esc(reequestty::OnEsc::SkipQuestion)
                 .build(),
         ),
         &mut backend,

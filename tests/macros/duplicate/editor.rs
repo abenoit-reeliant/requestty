@@ -1,5 +1,5 @@
 fn main() {
-    let q = requestty::questions![Editor {
+    let q = reequestty::questions![Editor {
         editor: todo!(),
         editor: todo!(),
     }];

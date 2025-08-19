@@ -17,7 +17,7 @@ use crate::{
 /// but [`Choice::Separator`]s can only be single line.
 ///
 /// <img
-///   src="https://raw.githubusercontent.com/lutetium-vanadium/requestty/master/assets/expand.gif"
+///   src="https://raw.githubusercontent.com/lutetium-vanadium/reequestty/master/assets/expand.gif"
 ///   style="max-height: 15rem"
 /// />
 ///
@@ -26,7 +26,7 @@ use crate::{
 /// # Examples
 ///
 /// ```
-/// use requestty::Question;
+/// use reequestty::Question;
 ///
 /// let expand = Question::expand("overwrite")
 ///     .message("Conflict on `file.rs`")
@@ -62,7 +62,7 @@ impl<'a> ExpandBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let expand = Question::expand("overwrite")
     ///     .message("Conflict on `file.rs`")
@@ -73,7 +73,7 @@ impl<'a> ExpandBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Question, Answers};
+    /// use reequestty::{Question, Answers};
     ///
     /// let expand = Question::expand("overwrite")
     ///     .when(|previous_answers: &Answers| match previous_answers.get("ignore-conflicts") {
@@ -87,7 +87,7 @@ impl<'a> ExpandBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let expand = Question::expand("overwrite")
     ///     .ask_if_answered(true)
@@ -98,7 +98,7 @@ impl<'a> ExpandBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Question, OnEsc};
+    /// use reequestty::{Question, OnEsc};
     ///
     /// let expand = Question::expand("overwrite")
     ///     .on_esc(OnEsc::Terminate)
@@ -121,7 +121,7 @@ impl<'a> ExpandBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let expand = Question::expand("overwrite")
     ///     .choice('d', "Show diff")
@@ -147,7 +147,7 @@ impl<'a> ExpandBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let expand = Question::expand("overwrite")
     ///     .page_size(10)
@@ -168,7 +168,7 @@ impl<'a> ExpandBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let expand = Question::expand("overwrite")
     ///     .should_loop(false)
@@ -193,7 +193,7 @@ impl<'a> ExpandBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let expand = Question::expand("overwrite")
     ///     .choice('x', "Abort")
@@ -229,7 +229,7 @@ impl<'a> ExpandBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let expand = Question::expand("overwrite")
     ///     .separator("-- custom separator text --")
@@ -253,7 +253,7 @@ impl<'a> ExpandBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let expand = Question::expand("overwrite")
     ///     .default_separator()
@@ -278,7 +278,7 @@ impl<'a> ExpandBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let expand = Question::expand("overwrite")
     ///     .choices(vec![
@@ -324,7 +324,7 @@ impl<'a> ExpandBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let expand = Question::expand("overwrite")
     ///     .transform(|choice, previous_answers, backend| {

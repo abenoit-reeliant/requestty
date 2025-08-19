@@ -1,3 +1,3 @@
 fn main() {
-    requestty::questions![Input {}];
+    reequestty::questions![Input {}];
 }

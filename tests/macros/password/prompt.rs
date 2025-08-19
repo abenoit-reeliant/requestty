@@ -1,3 +1,3 @@
 fn main() {
-    let q = requestty::questions![Password { prompt: todo!() }];
+    let q = reequestty::questions![Password { prompt: todo!() }];
 }

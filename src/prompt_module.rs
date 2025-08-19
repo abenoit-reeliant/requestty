@@ -118,7 +118,7 @@ where
 /// # let some_variable = "message";
 /// # let when = true;
 /// # fn get_default() -> bool { true }
-/// use requestty::prompt_module;
+/// use reequestty::prompt_module;
 ///
 /// let prompt_module = prompt_module![
 ///     MultiSelect {
@@ -155,7 +155,7 @@ where
 /// By default, the questions are stored in a [`Vec`]. However, if you wish to store the questions
 /// on the stack, prefix the questions with `inline`:
 /// ```
-/// use requestty::prompt_module;
+/// use reequestty::prompt_module;
 ///
 /// let prompt_module = prompt_module![ inline
 ///     Input {

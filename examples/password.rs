@@ -1,10 +1,10 @@
-use requestty::Question;
+use reequestty::Question;
 
-fn is_valid(password: &str, _: &requestty::Answers) -> bool {
+fn is_valid(password: &str, _: &reequestty::Answers) -> bool {
     password.contains(|c: char| c.is_ascii_digit()) && password.contains(char::is_alphabetic)
 }
 
-fn letter_and_numbers(password: &str, ans: &requestty::Answers) -> Result<(), String> {
+fn letter_and_numbers(password: &str, ans: &reequestty::Answers) -> Result<(), String> {
     if is_valid(password, ans) {
         Ok(())
     } else {
@@ -26,5 +26,5 @@ fn main() {
             .build(),
     ];
 
-    println!("{:#?}", requestty::prompt(questions));
+    println!("{:#?}", reequestty::prompt(questions));
 }

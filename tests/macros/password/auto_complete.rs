@@ -1,5 +1,5 @@
 fn main() {
-    requestty::questions![Password {
+    reequestty::questions![Password {
         auto_complete: todo!()
     }];
 }

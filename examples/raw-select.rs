@@ -1,4 +1,4 @@
-use requestty::{DefaultSeparator, Question};
+use reequestty::{DefaultSeparator, Question};
 
 fn main() {
     let questions = vec![
@@ -20,5 +20,5 @@ fn main() {
             .build(),
     ];
 
-    println!("{:#?}", requestty::prompt(questions));
+    println!("{:#?}", reequestty::prompt(questions));
 }

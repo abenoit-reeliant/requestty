@@ -137,14 +137,14 @@ impl<'p> Password<'p> {
 /// How it looks if you set a mask:
 ///
 /// <img
-///   src="https://raw.githubusercontent.com/lutetium-vanadium/requestty/master/assets/password-mask.gif"
+///   src="https://raw.githubusercontent.com/lutetium-vanadium/reequestty/master/assets/password-mask.gif"
 ///   style="max-height: 11rem"
 /// />
 ///
 /// How it looks if you do not set a mask:
 ///
 /// <img
-///   src="https://raw.githubusercontent.com/lutetium-vanadium/requestty/master/assets/password-hidden.gif"
+///   src="https://raw.githubusercontent.com/lutetium-vanadium/reequestty/master/assets/password-hidden.gif"
 ///   style="max-height: 11rem"
 /// />
 ///
@@ -153,7 +153,7 @@ impl<'p> Password<'p> {
 /// # Examples
 ///
 /// ```
-/// use requestty::Question;
+/// use reequestty::Question;
 ///
 /// let password = Question::password("password")
 ///     .message("What is your password?")
@@ -181,7 +181,7 @@ impl<'a> PasswordBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let password = Question::password("password")
     ///     .message("What is your password?")
@@ -192,7 +192,7 @@ impl<'a> PasswordBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Answers, Question};
+    /// use reequestty::{Answers, Question};
     ///
     /// let password = Question::password("password")
     ///     .when(|previous_answers: &Answers| match previous_answers.get("anonymous") {
@@ -206,7 +206,7 @@ impl<'a> PasswordBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let password = Question::password("password")
     ///     .ask_if_answered(true)
@@ -217,7 +217,7 @@ impl<'a> PasswordBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Question, OnEsc};
+    /// use reequestty::{Question, OnEsc};
     ///
     /// let password = Question::password("password")
     ///     .on_esc(OnEsc::Terminate)
@@ -233,7 +233,7 @@ impl<'a> PasswordBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let password = Question::password("password")
     ///     .mask('*')
@@ -248,7 +248,7 @@ impl<'a> PasswordBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// # fn encrypt(s: String) -> String { s }
     /// let password = Question::password("password")
@@ -262,7 +262,7 @@ impl<'a> PasswordBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let password = Question::password("password")
     ///     .validate(|password, previous_answers| if password.chars().count() >= 5 {
@@ -281,7 +281,7 @@ impl<'a> PasswordBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let password = Question::password("password")
     ///     .validate_on_key(|password, previous_answers| password.chars().count() >= 5)
@@ -300,8 +300,8 @@ impl<'a> PasswordBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
-    /// use requestty::prompt::style::Color;
+    /// use reequestty::Question;
+    /// use reequestty::prompt::style::Color;
     ///
     /// let password = Question::password("password")
     ///     .transform(|password, previous_answers, backend| {

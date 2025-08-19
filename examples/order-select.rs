@@ -1,4 +1,4 @@
-use requestty::Question;
+use reequestty::Question;
 
 fn main() {
     let order_select = Question::order_select("home_tasks")
@@ -13,5 +13,5 @@ fn main() {
         })
         .build();
 
-    println!("{:#?}", requestty::prompt_one(order_select));
+    println!("{:#?}", reequestty::prompt_one(order_select));
 }

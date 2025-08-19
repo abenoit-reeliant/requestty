@@ -12,7 +12,7 @@ use crate::{
 /// but [`Choice::Separator`]s can only be single line.
 ///
 /// <img
-///   src="https://raw.githubusercontent.com/lutetium-vanadium/requestty/master/assets/raw-select.gif"
+///   src="https://raw.githubusercontent.com/lutetium-vanadium/reequestty/master/assets/raw-select.gif"
 ///   style="max-height: 15rem"
 /// />
 ///
@@ -21,7 +21,7 @@ use crate::{
 /// # Examples
 ///
 /// ```
-/// use requestty::{Question, DefaultSeparator};
+/// use reequestty::{Question, DefaultSeparator};
 ///
 /// let raw_select = Question::raw_select("theme")
 ///     .message("What do you want to do?")
@@ -59,7 +59,7 @@ impl<'a> RawSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let raw_select = Question::raw_select("theme")
     ///     .message("What do you want to do?")
@@ -70,7 +70,7 @@ impl<'a> RawSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Question, Answers};
+    /// use reequestty::{Question, Answers};
     ///
     /// let raw_select = Question::raw_select("theme")
     ///     .when(|previous_answers: &Answers| match previous_answers.get("use-default-theme") {
@@ -84,7 +84,7 @@ impl<'a> RawSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Question, Answers};
+    /// use reequestty::{Question, Answers};
     ///
     /// let raw_select = Question::raw_select("theme")
     ///     .ask_if_answered(true)
@@ -95,7 +95,7 @@ impl<'a> RawSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Question, Answers, OnEsc};
+    /// use reequestty::{Question, Answers, OnEsc};
     ///
     /// let raw_select = Question::raw_select("theme")
     ///     .on_esc(OnEsc::Terminate)
@@ -119,7 +119,7 @@ impl<'a> RawSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Question, DefaultSeparator};
+    /// use reequestty::{Question, DefaultSeparator};
     ///
     /// let raw_select = Question::raw_select("theme")
     ///     .choices(vec![
@@ -151,7 +151,7 @@ impl<'a> RawSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let raw_select = Question::raw_select("theme")
     ///     .page_size(10)
@@ -171,7 +171,7 @@ impl<'a> RawSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let raw_select = Question::raw_select("theme")
     ///     .should_loop(false)
@@ -192,7 +192,7 @@ impl<'a> RawSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let raw_select = Question::raw_select("theme")
     ///     .choice("Order a Pizza")
@@ -217,7 +217,7 @@ impl<'a> RawSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let raw_select = Question::raw_select("theme")
     ///     .separator("-- custom separator text --")
@@ -241,7 +241,7 @@ impl<'a> RawSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let raw_select = Question::raw_select("theme")
     ///     .default_separator()
@@ -265,7 +265,7 @@ impl<'a> RawSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::{Question, DefaultSeparator};
+    /// use reequestty::{Question, DefaultSeparator};
     ///
     /// let raw_select = Question::raw_select("theme")
     ///     .choices(vec![
@@ -301,7 +301,7 @@ impl<'a> RawSelectBuilder<'a> {
     /// # Examples
     ///
     /// ```
-    /// use requestty::Question;
+    /// use reequestty::Question;
     ///
     /// let raw_select = Question::raw_select("theme")
     ///     .transform(|choice, previous_answers, backend| {

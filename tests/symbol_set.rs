@@ -1,11 +1,11 @@
-use requestty::Question;
+use reequestty::Question;
 use ui::events::{KeyCode, TestEvents};
 
 mod helpers;
 
 #[test]
 fn test_validate() {
-    requestty::symbols::set(requestty::symbols::ASCII);
+    reequestty::symbols::set(reequestty::symbols::ASCII);
 
     let prompt = Question::int("name").message("message").validate(|i, _| {
         if i > 3 {
@@ -28,5 +28,5 @@ fn test_validate() {
         KeyCode::Enter.into(),
     ]);
 
-    requestty::prompt_one_with(prompt, &mut backend, &mut events).unwrap();
+    reequestty::prompt_one_with(prompt, &mut backend, &mut events).unwrap();
 }

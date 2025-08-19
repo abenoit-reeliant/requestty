@@ -1,3 +1,3 @@
 fn main() {
-    let q = requestty::questions![MultiSelect { extension: todo!() }];
+    let q = reequestty::questions![MultiSelect { extension: todo!() }];
 }
