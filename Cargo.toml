@@ -21,8 +21,8 @@ members = [
 ]
 
 [dependencies]
-ui = { package = "reequestty-ui", path = "./reequestty-ui", version = "=0.5.0" }
-macro = { package = "reequestty-macro", path = "./reequestty-macro", optional = true, version = "=0.5.0" }
+ui = { package = "reequestty-ui", path = "./reequestty-ui", version = "=0.5.1" }
+macro = { package = "reequestty-macro", path = "./reequestty-macro", optional = true, version = "=0.5.1" }
 
 tempfile = "3"
 

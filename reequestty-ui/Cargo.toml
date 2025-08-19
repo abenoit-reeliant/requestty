@@ -1,11 +1,11 @@
 [package]
 name = "reequestty-ui"
-version = "0.5.0"
-authors = ["Lutetium Vanadium"]
+version = "0.5.1"
+authors = ["Lutetium Vanadium", "Antoine Benoit"]
 edition = "2018"
 description = "A widget based terminal ui rendering library."
-homepage="https://github.com/Lutetium-Vanadium/reequestty#readme"
-repository = "https://github.com/Lutetium-Vanadium/reequestty"
+homepage="https://github.com/abenoit-reeliant/reequestty#readme"
+repository = "https://github.com/abenoit-reeliant/reequestty"
 documentation="https://docs.rs/reequestty-ui"
 license = "MIT"
 readme = "README.md"
